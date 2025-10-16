@@ -31,22 +31,11 @@ class BatcheController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
-        $validated = $request->validate([
-        'name' => 'required|string|max:255',
-        'course_id' => 'required|integer|exists:courses,id', // must be an integer and exist in courses table
-        'start_date' => 'required|string', // we will convert it
-    ]);
-
-    // Convert start_date to MySQL format (YYYY-MM-DD)
-    $validated['start_date'] = Carbon::createFromFormat('m/d/Y', $validated['start_date'])->format('Y-m-d');
-
-    // Create the batch
-    Batche::create($validated);
-
-    // Redirect with success message
-    return redirect('batches')->with('flash_message', 'Batch Added!'); 
+        $input = $request->all();
+        Batche::create($input);
+        return redirect('batches')->with('flash_message', 'Batches Addedd!');  
     }
 
     /**
