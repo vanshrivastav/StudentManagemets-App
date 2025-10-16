@@ -14,7 +14,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>S.no</th>
                         <th>Enroll no</th>
                         <th>Batch</th>
                         <th>Student</th>
@@ -28,8 +28,8 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->enroll_no }}</td>
-                        <td>{{ $item->batche_id }}</td>
-                        <td>{{ $item->student_id }}</td>
+                        <td>{{ $item->batche?->name ?? 'No Batch' }}</td>
+                        <td>{{ $item->student?->name ?? 'No Student' }}</td>
                         <td>{{ $item->join_date }}</td>
                         <td>{{ $item->fee }}</td>
 

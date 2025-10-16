@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 use App\Models\Batche;
+use App\Models\Course;
 use Carbon\Carbon; 
 use Illuminate\View\View;
 
@@ -23,15 +24,16 @@ class BatcheController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
-        return view('batches.create');
+        $courses = Course::pluck('name', 'id');
+        return view('batches.create', compact('courses'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $input = $request->all();
         Batche::create($input);

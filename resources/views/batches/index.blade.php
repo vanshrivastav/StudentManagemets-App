@@ -14,7 +14,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>S.no</th>
                         <th>Batche Name</th>
                         <th>Course Name</th>
                         <th>Start Date</th>
@@ -26,7 +26,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->course_id }}</td>
+                        <td>{{ $item->course->name }}</td>
                         <td>{{ $item->start_date }}</td>
 
                         <td>

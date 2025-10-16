@@ -14,7 +14,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>S.no</th>
                         <th>Name</th>
                         <th>Address</th>
                         <th>Mobile</th>

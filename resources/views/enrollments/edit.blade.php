@@ -5,7 +5,7 @@
     <div class="card-header">Enrollment Page</div>
     <div class="card-body">
 
-        <form action="{{ url('enrollments/' .$enrollment->id) }}" method="post">
+        <form action="{{ url('enrollments/' .$enrollments->id) }}" method="post">
             {!! csrf_field() !!}
             @method("PATCH")
             <input type="hidden" name="id" id="id" value="{{$enrollments->id}}" id="id" />
